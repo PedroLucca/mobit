@@ -10,7 +10,6 @@ import {
   chakra,
   Box,
   Link,
-  Avatar,
   FormControl,
   FormHelperText,
   InputRightElement
@@ -35,6 +34,7 @@ const Login = () => {
       justifyContent="center"
       alignItems="center"
     >
+      
       <Stack
         flexDir="column"
         mb="2"
