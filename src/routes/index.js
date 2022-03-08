@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 import Login from '../pages/Login';
 import Cadastro from '../pages/Cadastro';
 import Listagem from '../pages/Listagem';
+import Sobre from '../pages/Sobre';
 
 
 function MobitRoutes(){
@@ -15,6 +16,7 @@ function MobitRoutes(){
             <Route exact path="/login" element={<Login/>} />
             <Route exact path="/cadastro" element={<Cadastro/>} />
             <Route exact path="/listar" element={<Listagem/>} />
+            <Route exact path="/sobre" element={<Sobre/>} />
             <Route path="*" component={<Login/>} />
         </Routes>
         
