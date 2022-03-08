@@ -19,7 +19,7 @@ import {
       return (
         <Stack maxW={'8rem'} p={'0.8rem'} alignSelf='end'>
         <Button colorScheme='blue' onClick={Deslogar}>
-          <Stack spacing={'10px'} direction='row'><BiLogOut/><Text fontSize={'15px'}>Logout</Text></Stack>
+          <Stack spacing={'5px'} direction='row'><BiLogOut/><Text fontSize={'15px'}>Logout</Text></Stack>
         </Button>
         
       </Stack>
