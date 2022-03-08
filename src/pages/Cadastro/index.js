@@ -62,7 +62,7 @@ const Cadastro = () => {
     <Flex
       flexDirection="column"
       width="100wh"
-      height="100vh"
+      height="70vh"
       backgroundColor="gray.100"
       justifyContent="center"
       alignItems="center"

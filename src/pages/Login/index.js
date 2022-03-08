@@ -93,12 +93,6 @@ const Login = () => {
           </form>
         </Box>
       </Stack>
-      <Box>
-        É novo por aqui?{" "}
-        <Link color="blue.500" href="#">
-          Cadastre-se
-        </Link>
-      </Box>
     </Flex>
   );
 };
