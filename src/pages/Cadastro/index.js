@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import ModalCadastro from '../../components/Modal';
 import Logout from '../../components/Logout';
+
 import {
   Flex,
   Stack,
@@ -23,6 +24,7 @@ const Cadastro = () => {
     const [success, setData] = useState(false)
     const [location, setLocation] = useState(0)
     
+    
     const [checkedTurnosIds, setCheckedTurnosIds] = useState([]);
     const checkboxes = [-1,-1 ,-1,-1]
 
@@ -36,9 +38,20 @@ const Cadastro = () => {
         localizacao: location,
         turnos: checkedTurnosIds
       }
-        console.log(escola)
+        
+        if(localStorage.getItem('Escolas')){
+          let data = (localStorage.getItem('Escolas'));
+          data = JSON.parse(data);
+          data.push(escola);
+
+          localStorage.setItem('Escolas', JSON.stringify(data));
+        }else{
+          localStorage.setItem('Escolas', JSON.stringify([escola]));
+        }
+        
         e.preventDefault();
         setData(true);
+
     }
 
     const PushArray = (e) => {

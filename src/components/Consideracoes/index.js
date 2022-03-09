@@ -1,21 +1,12 @@
 import {
   Box,
-  Button,
   chakra,
   Heading,
-  Stack,
   Flex,
-  Center,
-  SimpleGrid,
   Text,
-  Divider,
-  ListItem ,
   useColorModeValue,
 } from "@chakra-ui/react";
 
-import {motion} from 'framer-motion';
-
-import { GiCoins,GiHandOk,GiChart } from "react-icons/gi";
 import FeaturesConsideracoes from '../FeaturesConsideracoes';
 export default function Consideracoes() {
 
