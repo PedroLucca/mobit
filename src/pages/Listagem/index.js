@@ -1,7 +1,8 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import Logout from '../../components/Logout';
 import Card from '../../components/Card';
 import CardAPI from '../../components/CardApi';
+import axios from '../../services/axios';
 import {
   Flex,
   Stack,
@@ -25,114 +26,33 @@ const Listagem = () => {
     }
 
     const [searchValue, SetInputValue] = useState('');
+    const [apiSchools, setSchools] = useState([]);
+    const [dataSchools, setDataSchool] = useState([]);
 
     const handleSearch = (e) => SetInputValue(e.target.value);
 
-    let data_api = [
-      {
-        anoCenso: 2013,
-        cod: 33062501,
-        nome: "0101001 ESCOLA MUNICIPAL VICENTE LICINIO CARDOSO",
-        codCidade: 3304557,
-        "cidade": "RIO DE JANEIRO",
-        "estado": "RJ",
-        "regiao": "Sudeste",
-        "situacaoFuncionamento": 1,
-        "dependenciaAdministrativa": 3,
-        "idebAI": 0.0,
-        "idebAF": 4.900000095367432,
-        "enemMediaGeral": 0.0,
-        "situacaoFuncionamentoTxt": "Em atividade",
-        "dependenciaAdministrativaTxt": "Municipal"
-      },
-      {
-        anoCenso: 2013,
-        cod: 33062439,
-        nome: "0101003 ESCOLA MUNICIPAL DARCY VARGAS",
-        codCidade: 3304557,
-        "cidade": "RIO DE JANEIRO",
-        "estado": "RJ",
-        "regiao": "Sudeste",
-        "situacaoFuncionamento": 1,
-        "dependenciaAdministrativa": 3,
-        "idebAI": 4.300000190734863,
-        "idebAF": 0.0,
-        "enemMediaGeral": 0.0,
-        "situacaoFuncionamentoTxt": "Em atividade",
-        "dependenciaAdministrativaTxt": "Municipal"
-      },
-      {
-        anoCenso: 2013,
-        cod: 33062420,
-        nome: "0101004 ESCOLA MUNICIPAL BENJAMIN CONSTANT",
-        codCidade: 3304557,
-        "cidade": "RIO DE JANEIRO",
-        "estado": "RJ",
-        "regiao": "Sudeste",
-        "situacaoFuncionamento": 1,
-        "dependenciaAdministrativa": 3,
-        "idebAI": 4.300000190734863,
-        "idebAF": 4.099999904632568,
-        "enemMediaGeral": 0.0,
-        "situacaoFuncionamentoTxt": "Em atividade",
-        "dependenciaAdministrativaTxt": "Municipal"
-      },
-      {
-        anoCenso: 2013,
-        cod: 33062455,
-        nome: "0101005 ESCOLA MUNICIPAL GENERAL MITRE",
-        codCidade: 3304557,
-        "cidade": "RIO DE JANEIRO",
-        "estado": "RJ",
-        "regiao": "Sudeste",
-        "situacaoFuncionamento": 1,
-        "dependenciaAdministrativa": 3,
-        "idebAI": 6.0,
-        "idebAF": 0.0,
-        "enemMediaGeral": 0.0,
-        "situacaoFuncionamentoTxt": "Em atividade",
-        "dependenciaAdministrativaTxt": "Municipal"
-      },
-      {
-        anoCenso: 2013,
-        cod: 33062447,
-        nome: "0101006 ESCOLA MUNICIPAL FRANCISCO BENJAMIM GALLOTI",
-        codCidade: 3304557,
-        "cidade": "RIO DE JANEIRO",
-        "estado": "RJ",
-        "regiao": "Sudeste",
-        "situacaoFuncionamento": 1,
-        "dependenciaAdministrativa": 3,
-        "idebAI": 5.199999809265137,
-        "idebAF": 0.0,
-        "enemMediaGeral": 0.0,
-        "situacaoFuncionamentoTxt": "Em atividade",
-        "dependenciaAdministrativaTxt": "Municipal"
-      }
-    ];
+      useEffect(()=>{
+        async function getSchools(){
 
-    
+          let data = (localStorage.getItem('Escolas'));
 
-    const dataList = [
-        {
-          nome: "Unidade Escolar Professor Darcy Araújo",
-          diretor: "Ana Célia",
-          localizacao: "Urbano",
-          turnos: ['M', 'T']
-        },
-        {
-          nome: "Unidade Escolar Professor Darcy Araújo",
-          diretor: "Francisca Domingas",
-          localizacao: "Rural",
-          turnos: ['I']
-        },
-        {
-          nome: "Unidade Petrônio Portella",
-          diretor: "Morgana Ribeiro",
-          localizacao: "Rural",
-          turnos: ['T', 'N']
+            data = JSON.parse(data);
+            console.log(data);
+            if(data){
+              setDataSchool(data);
+            }
+
+            let route = `/api/escolas?nome=aplicacao`;
+
+            const response = await axios.get(route);
+            
+            console.log(response.data);
+
+            setSchools(response.data[1]);
+            
         }
-      ];
+        getSchools();
+    }, []);
 
       
 
@@ -188,15 +108,15 @@ const Listagem = () => {
         </Stack>
 
           <SimpleGrid columns={[1, 3, 1, 3]} spacing='10px'  maxH={'100%'} maxW={'70%'}>
-            {(DataType===2) ? 
-                    dataList.map(function (data) {
-                      
-                      const { nome, diretor, localizacao, turnos } = data;
-                      if(nome.toLowerCase().normalize("NFD").includes(searchValue.toLowerCase().normalize("NFD"))){
+            {(DataType===2) && (dataSchools!==undefined) ? 
+                    dataSchools.map(function (data) {
+                      console.log("data:", dataSchools);
+                      const { escola, diretor, localizacao, turnos } = data;
+                      if(escola.toLowerCase().normalize("NFD").includes(searchValue.toLowerCase().normalize("NFD"))){
                         
                           return (
                             <Card
-                              nome={nome}
+                              nome={escola}
                               diretor={diretor}
                               localizacao={localizacao}
                               turnos={turnos}
@@ -204,8 +124,7 @@ const Listagem = () => {
                           );
                       }
                       return <></>})
-                  : data_api.map(function (data) {
-                    
+                  : apiSchools.map(function (data) {
                     const { nome, anoCenso, cod, codCidade, cidade,  estado, regiao, situacaoFuncionamento, dependenciaAdministrativa, situacaoFuncionamentoTxt, dependenciaAdministrativaTxt } = data;
                     if(nome.toLowerCase().normalize("NFD").includes(searchValue.toLowerCase().normalize("NFD"))){
                         
