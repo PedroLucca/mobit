@@ -30,7 +30,6 @@ const ModalCadastro = () => {
             <ModalBody>
               <Text>O cadastro da escola foi finalizado, você pode verificar o dado cadastrado na aba "/listar".</Text>
             </ModalBody>
-  
             <ModalFooter justifyContent={'center'}>
             </ModalFooter>
           </ModalContent>

@@ -7,18 +7,21 @@ import {
 
   import { useNavigate } from 'react-router';
   import { BiLogOut } from "react-icons/bi";
+  import { logout } from "../../services/auth";
   
   const Logout = () => {
 
     const navigate = useNavigate();
+
   
-      function Deslogar(e){
+      const handleLogout = () => {
+        logout();
         navigate('/login');
       }
   
       return (
         <Stack maxW={'8rem'} p={'0.8rem'} alignSelf='end'>
-        <Button colorScheme='blue' onClick={Deslogar}>
+        <Button colorScheme='blue' onClick={handleLogout}>
           <Stack spacing={'5px'} direction='row'><BiLogOut/><Text fontSize={'15px'}>Logout</Text></Stack>
         </Button>
         

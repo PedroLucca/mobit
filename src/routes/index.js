@@ -1,24 +1,30 @@
 import { Route, Routes } from 'react-router-dom';
 
-//import Header from './components/Header';
-//import MyRoute from './MyRoute';
+import React, {Fragment} from 'react';
+
 import Login from '../pages/Login';
 import Cadastro from '../pages/Cadastro';
 import Listagem from '../pages/Listagem';
 import Sobre from '../pages/Sobre';
-
+import PrivateRoute from '../routes/privateRoute';
+import HomeRoute from './homeRoute';
 
 function MobitRoutes(){
     return(
-        
-        <Routes>
-            <Route exact path="/" element={<Login/>} />
-            <Route exact path="/login" element={<Login/>} />
-            <Route exact path="/cadastro" element={<Cadastro/>} />
-            <Route exact path="/listar" element={<Listagem/>} />
-            <Route exact path="/sobre" element={<Sobre/>} />
-            <Route path="*" component={<Login/>} />
-        </Routes>
+        <Fragment>
+            <Routes>
+                <Route exact path='/' element={<HomeRoute/>}/>
+                <Route exact path="/login" element={<Login/>}/>
+                <Route  path="/cadastro" element={<PrivateRoute/>} >
+                    <Route  path="/cadastro" element={<Cadastro/>} />
+                </Route>
+                <Route  path="/listar" element={<PrivateRoute/>} >
+                    <Route  path="/listar" element={<Listagem/>} />
+                </Route>
+                <Route  path="/sobre" element={<Sobre/>} />
+                <Route path="*" component={<Login/>} />
+            </Routes>
+        </Fragment>
         
     );
 }
