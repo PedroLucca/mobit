@@ -28,7 +28,7 @@ const ModalCadastro = () => {
             <ModalHeader>Sucesso!</ModalHeader>
             <ModalCloseButton />
             <ModalBody>
-              <Text isTruncated>O cadastro da escola foi finalizado.</Text>
+              <Text>O cadastro da escola foi finalizado, você pode verificar o dado cadastrado na aba "/listar".</Text>
             </ModalBody>
   
             <ModalFooter justifyContent={'center'}>
