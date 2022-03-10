@@ -37,7 +37,7 @@ const Cadastro = () => {
         localizacao: location,
         turnos: checkedTurnosIds
       }
-        console.log(escola);
+
         if(localStorage.getItem('Escolas')){
           let data = (localStorage.getItem('Escolas'));
           data = JSON.parse(data);

@@ -1,3 +1,5 @@
+import FeaturesConsideracoes from '../FeaturesConsideracoes';
+
 import {
   Box,
   chakra,
@@ -7,7 +9,6 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 
-import FeaturesConsideracoes from '../FeaturesConsideracoes';
 export default function Consideracoes() {
 
   return (

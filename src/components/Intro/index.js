@@ -1,3 +1,6 @@
+import Blur from '../Blur';
+import homeImg from '../../assets/eu_azul.svg';
+
 import {
     Box,
     Stack,
@@ -12,9 +15,8 @@ import {
     ButtonGroup,
     IconButton,
   } from '@chakra-ui/react';
+
   import { FaLinkedin, FaGithub } from 'react-icons/fa';
-  import Blur from '../Blur';
-  import homeImg from '../../assets/eu_azul.svg';
   import {motion} from 'framer-motion';
 
   
@@ -40,32 +42,31 @@ const Intro = () => {
                   Oi, meu nome é
                 </Text>
                 <motion.div initial="hidden" animate="visible" variants={{
-                hidden: {
-                  scale: .2,
-                  opacity: 0
-                },
-                visible: {
-                  scale: 1,
-                  opacity: 1,
-                  
-                },
-              }}
-              transition={{
-                delay: 0.5,
-                x: { type: "spring", stiffness: 100 },
-                default: { duration: 0.3 },
-              }}>
-                <Text
-                  mb="2"
-                  w="full"
-                  paddingBottom="5px"
-                  bgClip="text"
-                  bgGradient="linear(to-r,#5299D3,#C0FDFB)"
-                  fontWeight="extrabold"
-                  bgSize="200% auto"
-                >
-                  Pedro Lucca.
-                </Text>
+                    hidden: {
+                      scale: .2,
+                      opacity: 0
+                    },
+                    visible: {
+                      scale: 1,
+                      opacity: 1,
+                      
+                    },
+                  }}
+                  transition={{
+                    delay: 0.5,
+                    x: { type: "spring", stiffness: 100 },
+                    default: { duration: 0.3 },
+                  }}>
+                  <Text
+                    mb="2"
+                    w="full"
+                    paddingBottom="5px"
+                    bgClip="text"
+                    bgGradient="linear(to-r,#5299D3,#C0FDFB)"
+                    fontWeight="extrabold"
+                    bgSize="200% auto">
+                    Pedro Lucca.
+                  </Text>
                 </motion.div>
                 <Text fontSize="md" lineHeight={1.1} letterSpacing={{ base: "tight",md:"wider"}} textAlign={{base: 'justify', md:'left'}}>
                   Eu sou aluno de ciência da computação na Universidade Federal do Píauí, e estou atualmente no meu sétimo período.
@@ -76,8 +77,7 @@ const Intro = () => {
               <Stack direction={{ base: 'row', sm: 'row' }} spacing={4}>
                 
                 <Link
-                  target="_blank"
-                  rel="noopener"
+                  
                   href={
                     'https://drive.google.com/file/d/1aCIQV_ypczstZO8xOA_fWxqnnlvhO02d/view?usp=sharing'
                   }
@@ -92,14 +92,12 @@ const Intro = () => {
                 <Link href={'https://github.com/PedroLucca'}>
                   <IconButton
                     variant="outline"
-                    aria-label="Go to Github Profile"
                     fontSize="20px"
                     icon={<FaGithub />}
                     isRound="true"
                   ></IconButton>
                 </Link>
                 <Link
-                  rel="noopener"
                   href={'https://www.linkedin.com/in/pedro-lucca-dev'}
                 >
                   <IconButton

@@ -13,7 +13,6 @@ import {
 
 
 export default function Navbar() {
-  const bg = useColorModeValue("white", "gray.800");
 
   const navigate = useNavigate();
 
@@ -36,7 +35,7 @@ export default function Navbar() {
   return (
     <React.Fragment>
       <chakra.header
-        bg={bg}
+        bg={useColorModeValue("white", "gray.800")}
         w="100%"
         px={{ base: 2, sm: 4 }}
         py={4}
@@ -46,8 +45,8 @@ export default function Navbar() {
         <Flex alignItems="center" justifyContent="space-between" mx="auto">
           <Flex>
             <chakra.a
-              href="/"
-              title="Mobit Home Page"
+              href="/listar"
+              title="Mobit listar"
               display="flex"
               alignItems="center"
             >

@@ -24,15 +24,15 @@ const ModalCadastro = () => {
   
         <Modal isOpen={onOpen} onClose={reload}>
           <ModalOverlay />
-          <ModalContent>
-            <ModalHeader>Sucesso!</ModalHeader>
-            <ModalCloseButton />
-            <ModalBody>
-              <Text>O cadastro da escola foi finalizado, você pode verificar o dado cadastrado na aba "/listar".</Text>
-            </ModalBody>
-            <ModalFooter justifyContent={'center'}>
-            </ModalFooter>
-          </ModalContent>
+            <ModalContent>
+              <ModalHeader>Sucesso!</ModalHeader>
+              <ModalCloseButton />
+              <ModalBody>
+                <Text>O cadastro da escola foi finalizado, você pode verificar o dado cadastrado na aba "/listar".</Text>
+              </ModalBody>
+              <ModalFooter justifyContent={'center'}>
+              </ModalFooter>
+            </ModalContent>
         </Modal>
       </>
     )

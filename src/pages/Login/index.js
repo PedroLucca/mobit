@@ -37,7 +37,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
       e.preventDefault();
-      console.log(inputUser,inputPassword);
+      
       users.forEach((user) => {
         const { username, password } = user;
         if((username===inputUser)&&(password===inputPassword)){

@@ -39,8 +39,8 @@ export default function FeaturesConsideracoes() {
           icon={<Icon as={MdOutlineReportProblem} w={10} h={10} color={'#801733'}/>}
           title={'Dificuldades'}
           text={<Text textAlign='justify' letterSpacing="tight">
-            {"Dentre os problemas encontrados na implementação cabe ressaltar a dificuldade em retirar alguns warnings que aparecem no console, referentes á biblioteca react-router-dom. Além disso, criar a estilização completamente responsiva foi um pouco desafiador, pesquisei bastante por novas configurações e propriedades de componentes que não conhecia e ajudaram bastante."}
-        </Text>
+            {"Dentre os problemas encontrados na implementação cabe ressaltar a dificuldade em retirar alguns warnings que aparecem no console, referentes á biblioteca ReactDOM. Além disso, criar a estilização completamente responsiva foi um pouco desafiador, pesquisei bastante por novas configurações e propriedades de front-end que não conhecia e ajudaram bastante."}
+          </Text>
           }
           
         />
@@ -49,7 +49,7 @@ export default function FeaturesConsideracoes() {
           title={"Sugestões"}
           text={<Text textAlign='justify' letterSpacing="tight">
                 {"Com relação á conexão da API acredito que seria melhor fazer o projeto com uma API que não possua bloqueio do CORS para aplicações que rodam localmente (Ex: https://reqres.in/api/users)."}
-            </Text>
+          </Text>
           }
         />
 
