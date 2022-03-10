@@ -55,5 +55,6 @@ Esse projeto foi feito com as seguintes tecnologias:
 
  - Por um problema de conexão com a API através do localhost, foi necessário a instalação de uma extensão no navegador para que contornasse o bloqueio, a extensão se chama `Allow CORS` e pode ser instalada <a href="https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=pt-BR">aqui</a>. Concluída a instalação basta acessar a extensão e ativá-la, clicando na opção "ON".
  - O site possui um sistema simples de autenticação, verificando por um token no LocalStorage do navegador, portanto caso o usuário tente ir diretamente para as abas de "/listar" ou "/cadastro" sem ter feito o login, será redirecionado automaticamente para a página de login.
+ - Por fim, no cadastro de escolas através do site as escolas ficam armazenadas na memória de LocalStorage do navegador, por sua vez caso o usuário troque de navegador ou entre com a guia anônima as informações das escolas serão perdidas.
 
 Obrigado! 🌠
