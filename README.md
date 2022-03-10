@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">	
-   <a href="https://www.linkedin.com/in/PedroLucca/">
+   <a href="www.linkedin.com/in/pedro-lucca-dev">
       <img alt="PedroLucca" src="https://img.shields.io/badge/-PedroLucca-5965e0?style=for-the-badge&logo=Linkedin&logoColor=white" />
    </a>
   <a href="mailto:pedrolucca27@gmail.com">
