@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import ModalCadastro from '../../components/Modal';
-import Logout from '../../components/Logout';
+import Navbar from '../../components/Navbar';
 
 import {
   Flex,
@@ -8,7 +8,6 @@ import {
   FormControl,
   FormLabel,
   Input,
-  Heading,
   Button,
   Box,
   Checkbox,
@@ -26,7 +25,7 @@ const Cadastro = () => {
     
     
     const [checkedTurnosIds, setCheckedTurnosIds] = useState([]);
-    const checkboxes = [-1,-1 ,-1,-1]
+    const [checkboxes, setCheckboxes] = useState([-1,-1,-1,-1]);
 
     const handleInputChangeSchool = (e) => setInputSchool(e.target.value)
     const handleInputChangePrincipal = (e) => setInputPrincipal(e.target.value)
@@ -38,7 +37,7 @@ const Cadastro = () => {
         localizacao: location,
         turnos: checkedTurnosIds
       }
-        
+        console.log(escola);
         if(localStorage.getItem('Escolas')){
           let data = (localStorage.getItem('Escolas'));
           data = JSON.parse(data);
@@ -57,11 +56,16 @@ const Cadastro = () => {
     const PushArray = (e) => {
       setCheckedTurnosIds(Turnos => [...Turnos, e.target.value]);
       checkboxes[parseInt(e.target.id)] = parseInt(e.target.id);
+      var check = checkboxes;
+      check[parseInt(e.target.id)] = 1;
+      setCheckboxes(check);
     }
     
     const PopArray = (e) => {
       setCheckedTurnosIds(checkedTurnosIds.filter(turno => turno !== e.target.value));
-      checkboxes[parseInt(e.target.id)] = -1;
+      var check = checkboxes;
+      check[parseInt(e.target.id)] = -1;
+      setCheckboxes(check);
 
     }
 
@@ -70,15 +74,16 @@ const Cadastro = () => {
     width="100wh"
     height="100vh"
     backgroundColor="gray.100">
-      <Logout/>
+      <Navbar/>
       
     <Flex
       flexDirection="column"
-      width="100wh"
-      height="70vh"
+      width="100%"
+      height="100%"
       backgroundColor="gray.100"
       justifyContent="center"
       alignItems="center"
+      
     >
     
     <Stack 
@@ -87,9 +92,7 @@ const Cadastro = () => {
     justifyContent="center"
     alignItems="center">
         
-        <Heading color="blue.400" mb={'30px'}>Cadastro</Heading>
-        
-        <Box minW={{base: "90%", md: "468px", }}>
+        <Box minW={{base: "90%", md: "468px"}}>
             
           <form onSubmit={handleSubmit}>
             <Stack
@@ -124,8 +127,8 @@ const Cadastro = () => {
                 <FormLabel htmlFor='name'>Localização da escola</FormLabel>
                 <RadioGroup onChange={setLocation} value={location}>
                   <Stack spacing={[1, 4]} 
-            direction={['column', 'row']} 
-            >
+                  direction={['column', 'row']} 
+                  >
                     <Radio value='1'>Urbano</Radio>
                     <Radio value='2'>Rural</Radio>
                   </Stack>
@@ -139,10 +142,10 @@ const Cadastro = () => {
             direction={['column', 'row']} 
             >
                 <CheckboxGroup>
-                    <Checkbox onChange={checkboxes[0] !== -1 ? PopArray : PushArray} value='M' id='0'>Manhã</Checkbox>
-                    <Checkbox onChange={checkboxes[1] !== -1 ? PopArray : PushArray} value='T' id='1'>Tarde</Checkbox>
-                    <Checkbox onChange={checkboxes[2] !== -1 ? PopArray : PushArray} value='N' id='2'>Noite</Checkbox>
-                    <Checkbox onChange={checkboxes[3] !== -1 ? PopArray : PushArray} value='I' id='3'>Integral</Checkbox>
+                    <Checkbox onChange={checkboxes[0] === -1 ? PushArray : PopArray} value='M' id='0'>Manhã</Checkbox>
+                    <Checkbox onChange={checkboxes[1] === -1 ? PushArray : PopArray} value='T' id='1'>Tarde</Checkbox>
+                    <Checkbox onChange={checkboxes[2] === -1 ? PushArray : PopArray} value='N' id='2'>Noite</Checkbox>
+                    <Checkbox onChange={checkboxes[3] === -1 ? PushArray : PopArray} value='I' id='3'>Integral</Checkbox>
                 </CheckboxGroup>
             </Stack>
            

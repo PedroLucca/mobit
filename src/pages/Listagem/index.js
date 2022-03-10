@@ -1,8 +1,9 @@
 import {useState, useEffect} from 'react';
-import Logout from '../../components/Logout';
 import Card from '../../components/Card';
 import CardAPI from '../../components/CardApi';
 import axios from '../../services/axios';
+import Navbar from '../../components/Navbar';
+
 import {
   Flex,
   Stack,
@@ -16,6 +17,7 @@ import {
 } from "@chakra-ui/react";
 
 import { AiOutlineSearch } from 'react-icons/ai';
+
 
 const Listagem = () => {
 
@@ -37,7 +39,7 @@ const Listagem = () => {
           let data = (localStorage.getItem('Escolas'));
 
             data = JSON.parse(data);
-            console.log(data);
+            
             if(data){
               setDataSchool(data);
             }
@@ -46,7 +48,7 @@ const Listagem = () => {
 
             const response = await axios.get(route);
             
-            console.log(response.data);
+            
 
             setSchools(response.data[1]);
             
@@ -57,12 +59,12 @@ const Listagem = () => {
       
 
   return (
+
     <Stack 
     width="100wh"
     height="100vh"
     backgroundColor="gray.100">
-      <Logout/>
-      
+      <Navbar/>
     <Flex
       flexDirection="column"
       width="100wh"
@@ -82,12 +84,12 @@ const Listagem = () => {
             </InputGroup>
         </Stack>
         <Stack
-        direction={'row'} 
-        minWidth={'100%'} 
-        alignItems={'top'}>
+          direction={{base: 'column', md:'row'}} 
+          minWidth={'100%'} 
+          alignItems={{base:'center', md:'flex-start'}}>
 
         <Stack maxH={'50%'} minW={'20%'} mr={'2rem'} ml={'1.5rem'}>
-          <Stack>
+          
             <FormControl>
                         <FormLabel color="gray.600" fontWeight='bold' style={{textTransform:'uppercase'}}>
                           TIPO
@@ -103,17 +105,14 @@ const Listagem = () => {
                           <option value="1">Api</option>
                         </Select>
             </FormControl>
-          </Stack>
           
         </Stack>
-
-          <SimpleGrid columns={[1, 3, 1, 3]} spacing='10px'  maxH={'100%'} maxW={'70%'}>
+          <SimpleGrid columns={[1, 3]} spacing='10px'  maxH={'100%'} maxW={'70%'}>
             {(DataType===2) && (dataSchools!==undefined) ? 
                     dataSchools.map(function (data) {
-                      console.log("data:", dataSchools);
+                      
                       const { escola, diretor, localizacao, turnos } = data;
                       if(escola.toLowerCase().normalize("NFD").includes(searchValue.toLowerCase().normalize("NFD"))){
-                        
                           return (
                             <Card
                               nome={escola}
@@ -153,6 +152,7 @@ const Listagem = () => {
     
     </Flex>
     </Stack>
+    
   );
 };
 

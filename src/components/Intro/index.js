@@ -23,15 +23,14 @@ const Intro = () => {
         <Box id="intro">
           <Container
             as={SimpleGrid}
-            maxW={'7xl'}
+            maxW={'90%'}
             maxH={'3x1'}
             columns={{ base: 1, md: 2 }}
-            spacing={{ base: 5, lg: 16 }}
-            py={'6rem'}
-            
+            spacing={{ base: 0, md: 16 }}
+            py={{ base: '3rem', md: '6rem' }}
             background={'white.900'}
           >
-            <Stack spacing={{ base: 5, md: 10 }} ml={'2rem'}>
+            <Stack spacing={{ base: 5, md: 10 }}>
               <Heading
                 lineHeight={1}
                 fontWeight={600}
@@ -68,7 +67,7 @@ const Intro = () => {
                   Pedro Lucca.
                 </Text>
                 </motion.div>
-                <Text fontSize="md" lineHeight={1.1} letterSpacing="wider">
+                <Text fontSize="md" lineHeight={1.1} letterSpacing={{ base: "tight",md:"wider"}} textAlign={{base: 'justify', md:'left'}}>
                   Eu sou aluno de ciência da computação na Universidade Federal do Píauí, e estou atualmente no meu sétimo período.
                   Gosto bastante de programar e sempre tento aprender sobre novas tecnologias. Atuo como desenvolvedor Fullstack,
                   e o que mais gosto de usar atualmente é ReactJS, NodeJS, NextJS e Python.

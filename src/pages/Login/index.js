@@ -75,7 +75,7 @@ const Login = () => {
               backgroundColor="whiteAlpha.900"
               boxShadow="md"
             >
-              {errorLogin ? <Text textAlign="center" color={'red'} fontSize={'sm'}>
+              {errorLogin ? <Text textAlign="center" color={'red'} fontSize={'sm'} maxW={'15rem'} alignSelf={'center'}>
                    Nome de usuário ou senha inválidos, tente novamente...
                 </Text> : <></>
                 }

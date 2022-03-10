@@ -12,7 +12,7 @@ import { BsHandThumbsUp } from 'react-icons/bs';
 
 const FeatureConsideracao = (props) => {
   return (
-    <Stack alignItems="center" bg={useColorModeValue('white', 'gray.200')} p={8} rounded={'md'} overflow={'hidden'}>
+    <Stack alignItems="center" bg={useColorModeValue('white', 'gray.200')} p={{base: 0, md: 8}} rounded={'md'} overflow={'hidden'}>
       <Flex
         
         w={16}
@@ -33,13 +33,13 @@ const FeatureConsideracao = (props) => {
 
 export default function FeaturesConsideracoes() {
   return (
-    <Box p={4} justifyContent={'center'} alignItems='center'>
+    <Box p={{base:0, md:4}} justifyContent={'center'} alignItems={'center'}>
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={20} alignContent='center' justifyContent={'center'}>
         <FeatureConsideracao 
           icon={<Icon as={MdOutlineReportProblem} w={10} h={10} color={'#801733'}/>}
           title={'Dificuldades'}
           text={<Text textAlign='justify' letterSpacing="tight">
-            {"O React é uma biblioteca JavaScript de código aberto com foco em criar interfaces de usuário em páginas web. O diferencial do React é ser rápida, escalável e simples."}
+            {"Dentre os problemas encontrados na implementação cabe ressaltar a dificuldade em retirar alguns warnings que aparecem no console, referentes á biblioteca react-router-dom. Além disso, criar a estilização completamente responsiva foi um pouco desafiador, pesquisei bastante por novas configurações e propriedades de componentes que não conhecia e ajudaram bastante."}
         </Text>
           }
           
@@ -48,7 +48,7 @@ export default function FeaturesConsideracoes() {
           icon={<Icon as={BsHandThumbsUp} w={10} h={10} color={'#3e7332'}/>}
           title={"Sugestões"}
           text={<Text textAlign='justify' letterSpacing="tight">
-                {"O Axios é um pacote para NodeJS, que basicamente possibilita a comunicação entre o MobiT e a API REST que contêm os dados presentes no site."}
+                {"Com relação á conexão da API acredito que seria melhor fazer o projeto com uma API que não possua bloqueio do CORS para aplicações que rodam localmente (Ex: https://reqres.in/api/users)."}
             </Text>
           }
         />
