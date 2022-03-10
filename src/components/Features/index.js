@@ -1,4 +1,9 @@
-import { Box, SimpleGrid, Icon, Text, Stack, Flex } from '@chakra-ui/react';
+import { Box, 
+        SimpleGrid, 
+        Icon, 
+        Text, 
+        Stack, 
+        Flex } from '@chakra-ui/react';
 import { FaReact } from 'react-icons/fa';
 import { CgArrowsExchangeV } from 'react-icons/cg';
 import { SiChakraui } from 'react-icons/si';
@@ -8,7 +13,6 @@ const Feature = (props) => {
   return (
     <Stack alignItems="center" border='solid' borderColor='white' p={8} borderWidth='2px' borderRadius='5px'>
       <Flex
-        
         w={16}
         h={16}
         align={'center'}

@@ -1,3 +1,5 @@
+import FeaturesConsideracoes from '../FeaturesConsideracoes';
+
 import {
   Box,
   chakra,
@@ -7,25 +9,25 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 
-import FeaturesConsideracoes from '../FeaturesConsideracoes';
 export default function Consideracoes() {
 
   return (
     <Box  background='white' >
     
     <Flex
-      p={16}
+      p={{base:8, md:8}}
       paddingBottom={0}
-      style={{textAlign:"center",scrollMarginTop:50}} id="token" pt={2}
+      style={{textAlign:"center",scrollMarginTop:50}} pt={2}
       w="full"
       justifyContent="center"
       alignItems="center"
       
     >
       <Box   
-        px={8}
-        py={8}
+       px={{base: 0, md: 8}}
+       py={{base: 8, md: 0}}
         mx="auto"
+        
       >
           <Box >
           <Heading
@@ -48,7 +50,7 @@ export default function Consideracoes() {
               color='black.600'
               fontSize={{ md: "md" }}
             >
-            O sistema foi desenvolvido em x dias úteis, e no período de desenvolvimento enfrentei certos momentos onde acredito que o programa poderia ser melhorado,
+            O sistema foi desenvolvido em 7 dias úteis, e no período de desenvolvimento enfrentei certos momentos onde acredito que o programa poderia ser melhorado,
             e situações que me tiraram da zona de conforto e me fizeram aprender sobre novos assuntos.
             </chakra.p>
 
@@ -61,7 +63,7 @@ export default function Consideracoes() {
             >
             </chakra.p>
 
-          </Box>
+          </Box >
           
               <FeaturesConsideracoes/>
               

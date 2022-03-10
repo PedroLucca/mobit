@@ -8,13 +8,17 @@ import Listagem from '../pages/Listagem';
 import Sobre from '../pages/Sobre';
 import PrivateRoute from '../routes/privateRoute';
 import HomeRoute from './homeRoute';
+import LoginRoute from './loginRoute';
 
 function MobitRoutes(){
     return(
         <Fragment>
             <Routes>
                 <Route exact path='/' element={<HomeRoute/>}/>
-                <Route exact path="/login" element={<Login/>}/>
+                <Route  path="/login" element={<LoginRoute/>}>
+                    <Route exact path="/login" element={<Login/>}/>
+                </Route>
+                
                 <Route  path="/cadastro" element={<PrivateRoute/>} >
                     <Route  path="/cadastro" element={<Cadastro/>} />
                 </Route>

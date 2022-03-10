@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import { login } from "../../services/auth";
+import users from '../../data/users.json';
+
 import {
   Flex,
   Heading,
@@ -15,10 +18,11 @@ import {
   FormHelperText,
   InputRightElement
 } from "@chakra-ui/react";
+
 import { FaUserAlt, FaLock } from "react-icons/fa";
+
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import { login } from "../../services/auth";
-import users from '../../data/users.json';
+
 
 const CFaUserAlt = chakra(FaUserAlt);
 const CFaLock = chakra(FaLock);
@@ -37,7 +41,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
       e.preventDefault();
-      console.log(inputUser,inputPassword);
+      
       users.forEach((user) => {
         const { username, password } = user;
         if((username===inputUser)&&(password===inputPassword)){
@@ -75,7 +79,7 @@ const Login = () => {
               backgroundColor="whiteAlpha.900"
               boxShadow="md"
             >
-              {errorLogin ? <Text textAlign="center" color={'red'} fontSize={'sm'}>
+              {errorLogin ? <Text textAlign="center" color={'red'} fontSize={'sm'} maxW={'15rem'} alignSelf={'center'}>
                    Nome de usuário ou senha inválidos, tente novamente...
                 </Text> : <></>
                 }

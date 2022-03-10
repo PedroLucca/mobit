@@ -13,8 +13,7 @@ const Blur = (props) => {
       viewBox="0 0 568 560"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
+      {...props}>
       <circle
         cx="71"
         cy="61"

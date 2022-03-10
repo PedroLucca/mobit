@@ -1,5 +1,3 @@
-//import './App.css';
-
 import history from './services/history';
 import MobitRoutes from './routes';
 import { BrowserRouter } from 'react-router-dom';
