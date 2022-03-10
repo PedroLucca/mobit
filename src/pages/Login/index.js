@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import { login } from "../../services/auth";
+import users from '../../data/users.json';
+
 import {
   Flex,
   Heading,
@@ -15,10 +18,11 @@ import {
   FormHelperText,
   InputRightElement
 } from "@chakra-ui/react";
+
 import { FaUserAlt, FaLock } from "react-icons/fa";
+
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import { login } from "../../services/auth";
-import users from '../../data/users.json';
+
 
 const CFaUserAlt = chakra(FaUserAlt);
 const CFaLock = chakra(FaLock);
