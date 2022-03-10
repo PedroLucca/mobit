@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+<p align="center">
+  <img src="./public/MobiT-sem_fundo.png" height="200"/> 
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">	
+   <a href="https://www.linkedin.com/in/PedroLucca/">
+      <img alt="PedroLucca" src="https://img.shields.io/badge/-PedroLucca-5965e0?style=for-the-badge&logo=Linkedin&logoColor=white" />
+   </a>
+  <a href="mailto:pedrolucca27@gmail.com">
+   <img alt="Email" src="https://img.shields.io/badge/-PedroLucca-5965e0?style=for-the-badge&logo=gmail&logoColor=white" />
+  </a>
+</p>
 
-## Available Scripts
+<p align="center">
+  👏  Projeto desenvolvido durante o processo seletivo da empresa Mobieduca.me
+</p>
 
-In the project directory, you can run:
+<div align="center">
+  <sub> Made with 💖 by
+    <a href="https://github.com/PedroLucca"> Pedro Lucca.
+    <h1></h1>
+  </sub>
+</div>
+  
+# 📌 Seções
 
-### `npm start`
+* [Tecnologias](#rocket-tecnologias) 
+* [Tutorial](#scroll-tutorial)
+* [Recados Importantes](#exclamation-importante) 
+  
+# :rocket: Tecnologias
+Esse projeto foi feito com as seguintes tecnologias:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* [Javascript](https://www.javascript.com/)      
+* [React](https://reactjs.org/)      
+* [Chakra UI](https://chakra-ui.com/)
+* [Axios](https://axios-http.com/docs/intro)
+  
+# :scroll: Tutorial
+ Antes do passo-a-passo é necessário ressaltar que para a execução do projeto é necessário que haja na sua máquina os recursos do NodeJS, NPM e React devidamente instalados. Caso não possua esses recursos, um guia de instalação pode ser encontrado <a href="https://www.devmedia.com.br/como-instalar-o-node-js-npm-e-o-react-no-windows/40329">aqui</a>.
+  
+* Guia de execução
+   1. Abrir o terminal de comandos da sua máquina
+   2. Fazer a clonagem deste repositório através do comando: `git clone https://github.com/PedroLucca/mobit.git`
+   3. Entrar na pasta do projeto pelo terminal, e instalar as dependências através do comando: `npm i`
+   4. Após a devida instalação das dependências, iniciar o projeto executando o comando: `npm start`
+  
+* Fluxo de navegação
+   1. Após o início do programa o navegador na tela de login, hospedada no localhost:3000
+   2. O sistema possui dois usuários cadastrados que podem ser utilizados para login que são `usuário: user1 - senha: senha123` e o `usuário: user2 - senha: 123senha`
+   3. Após o login efetivo no sistema, o usuário será encaminhado para a tela de listagem tanto de escolas cadastradas dentro do sistema, quanto de escolas recebidas pela API.
+   4. Pela barra de navegação o usuário pode ir para aba de cadastro de escola, navegar para a tela "sobre" ou fazer o logout no site.
+  
+# :exclamation: Importante
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+ - Por um problema de conexão com a API através do localhost, foi necessário a instalação de uma extensão no navegador para que contornasse o bloqueio, a extensão se chama `Allow CORS` e pode ser instalada <a href="https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=pt-BR">aqui</a>. Concluída a instalação basta acessar a extensão e ativá-la, clicando na opção "ON".
+ - O site possui um sistema simples de autenticação, verificando por um token no LocalStorage do navegador, portanto caso o usuário tente ir diretamente para as abas de "/listar" ou "/cadastro" sem ter feito o login, será redirecionado automaticamente para a página de login.
+ - Por fim, no cadastro de escolas através do site as escolas ficam armazenadas na memória de LocalStorage do navegador, por sua vez caso o usuário troque de navegador ou entre com a guia anônima as informações das escolas serão perdidas.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Obrigado! 🌠
