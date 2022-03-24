@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  👏  Projeto desenvolvido durante o processo seletivo da empresa Mobieduca.me
+  👏  Projeto desenvolvido durante o processo seletivo da empresa Mobimark
 </p>
 
 <div align="center">
